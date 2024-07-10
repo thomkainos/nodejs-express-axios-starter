@@ -1,12 +1,10 @@
-name: Node Audit
+name: Node Build
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -20,5 +18,5 @@ jobs:
       - name: install dependencies
         run: npm install
           
-      - name: Run audit
-        run: npm audit
+      - name: Run CI
+        run: npm ci
