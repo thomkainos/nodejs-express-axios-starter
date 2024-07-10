@@ -1,4 +1,4 @@
-name: Engineering Academy
+name: Node Linter
 
 on:
   push:
@@ -11,8 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.15.0'
       - name: Run linter
       - run: npm run linter
+
